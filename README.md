@@ -1,3 +1,10 @@
+## 🤖 Model Weights
+본 프로젝트에서 Fine-tuning한 모델의 가중치(Weights)는 Hugging Face에서 다운로드할 수 있습니다.
+
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned)
+
+> **Note**: 위 링크에서 `adapter_model.safetensors` 및 설정 파일을 다운로드하여 베이스 모델과 병합하거나, 아래 코드로 바로 불러올 수 있습니다.
+
 ## 프로젝트 개요
 
 건설 현장 사고 데이터를 기반으로 재발 방지 대책 및 향후 조치 계획을 자동으로 생성하는 AI 시스템입니다. 
