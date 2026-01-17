@@ -1,14 +1,8 @@
 # Construction Accident Prevention AI
-<!-- 제목이 가장 먼저 나와야 합니다 -->
 
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned)
-<!-- 뱃지는 제목 바로 아래에 두면 멋있습니다 -->
 
-## 🤖 Model Weights
 본 프로젝트에서 Fine-tuning한 모델의 가중치(Weights)는 Hugging Face에서 다운로드할 수 있습니다.
-
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned)
-
 > **Note**: 위 링크에서 `adapter_model.safetensors` 및 설정 파일을 다운로드하여 베이스 모델과 병합하거나, 아래 코드로 바로 불러올 수 있습니다.
 ## 🚀 Quick Start
 Hugging Face에 등록된 모델을 `transformers` 라이브러리를 통해 바로 로드하여 사용할 수 있습니다.
