@@ -36,7 +36,8 @@ outputs = model.generate(
     top_p=0.9
 )
 
-print(tokenizer.decode(outputs, skip_special_tokens=True))'''
+print(tokenizer.decode(outputs, skip_special_tokens=True))
+```
 
 ## 프로젝트 개요
 
