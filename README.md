@@ -4,6 +4,40 @@
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned)
 
 > **Note**: 위 링크에서 `adapter_model.safetensors` 및 설정 파일을 다운로드하여 베이스 모델과 병합하거나, 아래 코드로 바로 불러올 수 있습니다.
+## 🚀 Quick Start
+Hugging Face에 등록된 모델을 `transformers` 라이브러리를 통해 바로 로드하여 사용할 수 있습니다.
+
+```python
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+# Hugging Face Model ID
+model_id = "lee124/Ko-Gemma-2-9b-Safety-FineTuned"
+
+# 1. Load Tokenizer & Model
+# 어댑터(LoRA) 가중치가 자동으로 베이스 모델과 병합되어 로드됩니다.
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    device_map="auto",
+    torch_dtype=torch.bfloat16  # GPU 환경에 따라 float16 사용 가능
+)
+
+# 2. Inference Example
+input_text = "건설 현장에서 추락 사고를 예방하려면 어떤 조치가 필요한가요?"
+inputs = tokenizer(input_text, return_tensors="pt").to("cuda")
+
+# 3. Generate Output
+outputs = model.generate(
+    **inputs, 
+    max_new_tokens=512,
+    do_sample=True,
+    temperature=0.7,
+    top_p=0.9
+)
+
+print(tokenizer.decode(outputs, skip_special_tokens=True))
+'''
 
 ## 프로젝트 개요
 
