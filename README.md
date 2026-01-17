@@ -1,9 +1,13 @@
 # Construction Accident Prevention AI
 
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/License-Gemma-green)](https://ai.google.dev/gemma/terms)
 
-본 프로젝트에서 Fine-tuning한 모델의 가중치(Weights)는 Hugging Face에서 다운로드할 수 있습니다.
+> 🏗️ **건설 현장 사고 예방을 위한 한국어 LLM (Ko-Gemma-2-9b) 파인튜닝 프로젝트**
+>
+> 건설 안전 지침 PDF를 학습하여 현장 안전 수칙 및 사고 예방 대책을 RAG 기반으로 정확하게 안내합니다.
+> 
 > **Note**: 위 링크에서 `adapter_model.safetensors` 및 설정 파일을 다운로드하여 베이스 모델과 병합하거나, 아래 코드로 바로 불러올 수 있습니다.
+> 
 ## 🚀 Quick Start
 Hugging Face에 등록된 모델을 `transformers` 라이브러리를 통해 바로 로드하여 사용할 수 있습니다.
 
@@ -52,11 +56,15 @@ RAG(Retrieval-Augmented Generation) 기반으로 104개의 건설안전지침 �
 - **RAG 시스템**: FAISS 벡터 스토어 + Cross-Encoder 재순위화
 - **자동 답변 생성**: 건설 현장 사고에 대한 맞춤형 안전 대책 생성
 
-### 사용한 모델 
-- **LLM**: `rtzr/ko-gemma-2-9b-it` (4-bit 양자화)
-- **Embeddings**: `jhgan/ko-sbert-sts`
-- **Cross-Encoder**: `bongsoo/albert-small-kor-cross-encoder-v1`
-- **Data Augmentation**: `monologg/koelectra-base-v3-generator`
+## Tech Stack & Models
+
+| Category | Model / Library | Note |
+| :--- | :--- | :--- |
+| **LLM** | `rtzr/ko-gemma-2-9b-it` | Base Model (4-bit QLoRA Fine-tuning) |
+| **Embedding** | `jhgan/ko-sbert-sts` | Semantic Search용 임베딩 모델 |
+| **Reranker** | `bongsoo/albert-small-kor` | 검색 결과 재순위화 (Cross-Encoder) |
+| **Augmentation** | `monologg/koelectra-base-v3` | BERT 기반 데이터 증강 (RMR) |
+| **Framework** | PyTorch, Transformers, LangChain | 학습 및 RAG 파이프라인 구축 |
 
 ## Data Engineering & 전처리
 
