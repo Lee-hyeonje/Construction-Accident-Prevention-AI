@@ -1,4 +1,4 @@
-# Construction Accident Prevention AI
+# 건설 현장 안전사고 예방 AI
 
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Ko--Gemma--2--9b--Safety--FineTuned-blue)](https://huggingface.co/lee124/Ko-Gemma-2-9b-Safety-FineTuned) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/License-Gemma-green)](https://ai.google.dev/gemma/terms)
 
@@ -8,7 +8,7 @@
 > 
 > **Note**: 위 링크에서 `adapter_model.safetensors` 및 설정 파일을 다운로드하여 베이스 모델과 병합하거나, 아래 코드로 바로 불러올 수 있습니다.
 > 
-## 🚀 Quick Start
+## 빠른 시작
 Hugging Face에 등록된 모델을 `transformers` 라이브러리를 통해 바로 로드하여 사용할 수 있습니다.
 
 ```python
@@ -41,14 +41,7 @@ outputs = model.generate(
 )
 
 print(tokenizer.decode(outputs, skip_special_tokens=True))
-```
-
-## 프로젝트 개요
-
-건설 현장 사고 데이터를 기반으로 재발 방지 대책 및 향후 조치 계획을 자동으로 생성하는 AI 시스템입니다. 
-RAG(Retrieval-Augmented Generation) 기반으로 104개의 건설안전지침 문서를 활용하여 
-현장 맞춤형 안전 대책을 제공합니다.
-
+``` 
 ## 주요 과제
 
 - **데이터 증강**: BERT 기반 Random Masking Replacement로 훈련 데이터 확장
@@ -56,7 +49,7 @@ RAG(Retrieval-Augmented Generation) 기반으로 104개의 건설안전지침 �
 - **RAG 시스템**: FAISS 벡터 스토어 + Cross-Encoder 재순위화
 - **자동 답변 생성**: 건설 현장 사고에 대한 맞춤형 안전 대책 생성
 
-## Tech Stack & Models
+## 기술 스택 및 활용 모델
 
 | Category | Model / Library | Note |
 | :--- | :--- | :--- |
